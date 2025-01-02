@@ -1,12 +1,20 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
+import {AuthSpotifyService} from './services/auth-spotify.service';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
+  standalone: true,
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Spotillect';
+  constructor(private authSpotifyService: AuthSpotifyService ) { }
+
+  loginWithSpotify() {
+    const authUrl = this.authSpotifyService.getLoginUrl();
+    window.location.href = authUrl;
+  }
 }
