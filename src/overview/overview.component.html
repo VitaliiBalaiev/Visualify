@@ -1,0 +1,10 @@
+<h2>Your Top 5 Artists</h2>
+
+<li *ngFor="let artist of topArtists">
+  <span>{{ artist.name }}</span>
+</li>
+
+<h2>Your Top 5 Tracks</h2>
+<li *ngFor="let track of topTracks">
+  <span>{{ track.name }} by {{ track.artists[0]?.name }}</span>
+</li>
