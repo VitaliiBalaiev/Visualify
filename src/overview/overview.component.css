@@ -1,0 +1,140 @@
+body {
+    
+}
+
+.favorite-artist {
+    margin-bottom: 150px;
+}
+
+.runner-up-artists {
+    margin-bottom: 150px;
+}
+
+.overview {
+    text-align: center;
+}
+
+.overview-title {
+    font-size: 36px;
+}
+
+.overview img {
+    display: inline-block;
+    border-radius: 10%;
+}
+
+.top-artist-name {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0.7em 0.7em 0.3em;
+}
+
+.top-artist-followers {
+    font-size: 20px;
+    margin-top: 1px;
+}
+
+.top-artist-genres {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    
+}
+
+.top-artist-genre-card {
+    text-transform: uppercase;
+    margin: 10px;
+    background-color: #20242c;
+    color: white;
+    border-radius: 13px;
+    padding: 2px 8px;
+}
+
+.top-artist-genre-card p{
+    background-color: #20242c;
+}
+
+.runner-up-artists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center horizontally */
+    gap: 20px; /* Space between items */
+}
+
+.runner-up-artist-card {
+    flex: 0 0 calc(50% - 300px); /* Take 50% width minus gap */
+    max-width: calc(50% - 300px); /* Ensure the width doesn't exceed 50% */
+    box-sizing: border-box; /* Include padding and border in width */
+    text-align: center; /* Center-align the text */
+}
+
+.runner-up-artist-card img {
+    margin: 0 auto;
+    display: block;
+}
+
+.runner-up-artist-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0.7em 0.7em 0.3em;
+}
+
+.runner-up-artist-followers {
+    font-size: 14px;
+}
+
+.runner-up-artist-genres {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.runner-up-artist-genre-card {
+    text-transform: uppercase;
+    margin: 6px;
+    background-color: #20242c;
+    color: white;
+    border-radius: 13px;
+    padding: 2px 8px;
+    font-size: 10px;
+}
+
+.runner-up-artist-genre-card p {
+    background-color: #20242c;
+}
+
+.top-track {
+    align-items: center;
+}
+
+.top-track-name {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 18px;
+
+}
+
+.top-track-artists {
+    font-size: 16px;
+}
+
+.image-button {
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: 25px;
+}
+
+.image-button img {
+    width: 51px;
+    height: 52px;
+    transition: transform 0.3s ease;
+}
+
+.image-button:hover img {
+    opacity: 0.8;
+    transform: scale(1.1);
+}

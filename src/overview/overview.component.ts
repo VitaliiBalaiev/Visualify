@@ -1,32 +1,46 @@
 import {Component, OnInit} from '@angular/core';
 import {FetchSpotifyService} from '../app/services/fetch-spotify.service';
 import {NgForOf, NgIf} from '@angular/common';
-import {Router} from '@angular/router';
+import {FormatFollowersPipe} from "../app/pipes/format-followers.pipe";
+import {MatDialog} from "@angular/material/dialog";
+import {SharePopupComponent} from "../share-popup/share-popup.component";
 
 @Component({
   selector: 'app-overview',
   imports: [
     NgForOf,
+    FormatFollowersPipe,
+    NgIf,
+    SharePopupComponent
+
   ],
   templateUrl: './overview.component.html',
   standalone: true,
   styleUrl: './overview.component.css'
 })
 export class OverviewComponent implements OnInit {
-  private token: string | null | undefined; // think of better alternative
   topArtists: any[] = [];
   topTracks: any[] = [];
 
-  constructor(private fetchSpotifyService: FetchSpotifyService, private router: Router) {}
+  constructor(private fetchSpotifyService: FetchSpotifyService, private dialogRef: MatDialog) {}
 
   ngOnInit(): void {
-   this.token = localStorage.getItem('spotifyToken');
-   this.getTopTracks(this.token);
-   this.getTopArtists(this.token)
+   this.getTopTracks();
+   this.getTopArtists()
   }
 
-  private getTopTracks(token: string | null): void {
-    this.fetchSpotifyService.fetchTopTracks(token).subscribe({
+  isModalOpen = false;
+
+  openModal() {
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
+  }
+  
+  private getTopTracks(): void {
+    this.fetchSpotifyService.fetchTopTracks().subscribe({
       next: (response: any) => {
         this.topTracks = response.items;
       },
@@ -36,8 +50,8 @@ export class OverviewComponent implements OnInit {
     });
   }
 
-  private getTopArtists(token: string | null): void {
-    this.fetchSpotifyService.fetchTopArtists(token).subscribe({
+  private getTopArtists(): void {
+    this.fetchSpotifyService.fetchTopArtists().subscribe({
       next: (response: any) => {
         this.topArtists = response.items;
       },
