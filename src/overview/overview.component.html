@@ -50,10 +50,10 @@
             </p>
         </div>
 
-<!--        <button class="image-button" (click)="openModal()">-->
-<!--            <img src="/share-icon.png" alt="Share Icon" />-->
-<!--        </button>-->
-<!--        <app-share-popup *ngIf="isModalOpen" (close)="closeModal()"></app-share-popup>-->
+        <button class="share-top-track" (click)="openModal(topTracks[0].name, getArtistNames(topTracks[0]), topTracks[0].external_urls.spotify, topTracks[0].album.images[0].url)">
+            <img src="/share-icon.png" alt="Share Icon" />
+        </button>
+        <app-share-popup *ngIf="isModalOpen" [trackName]="selectedTrackName" [trackArtists]="selectedArtistName" [shareLink]="selectedTrackUrl" [trackImg]="selectedTrackImg" (close)="closeModal()"></app-share-popup>
 
     </div>
     

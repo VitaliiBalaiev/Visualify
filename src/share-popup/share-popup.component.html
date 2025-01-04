@@ -1,0 +1,28 @@
+<div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <button class="close-button" (click)="closeModal()">
+            <span class="material-icons">close</span>
+        </button>
+        
+        <p>Scan this QR...</p>
+        
+        <div class="qr-container">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?data={{ shareLink }}&amp;size=200x200;&color=255-255-255&bgcolor=0-0-0" alt="" title="" />
+            <img [src]="trackImg" alt="trackImg" class="track-img">
+        </div>
+        
+        <p class="track-title">{{ trackName }}</p>
+        <p class="track-artists">{{ trackArtists }}</p>
+        <p class="copy-link-text">...or click to copy the link below!</p>
+        
+        <div class="copy-link-container">
+            <input type="text" 
+                   class="copy-link-input"
+                   [class.copied]="isCopied"
+                   [value]="isCopied ? 'Copied!' : shareLink"
+                   readonly
+                   (click)="copyLink(shareLink)">
+            
+        </div>
+    </div>
+</div>

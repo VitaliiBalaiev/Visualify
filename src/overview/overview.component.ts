@@ -12,7 +12,6 @@ import {SharePopupComponent} from "../share-popup/share-popup.component";
     FormatFollowersPipe,
     NgIf,
     SharePopupComponent
-
   ],
   templateUrl: './overview.component.html',
   standalone: true,
@@ -21,6 +20,11 @@ import {SharePopupComponent} from "../share-popup/share-popup.component";
 export class OverviewComponent implements OnInit {
   topArtists: any[] = [];
   topTracks: any[] = [];
+  selectedTrackUrl: string = '';
+  selectedTrackImg: string = '';
+  selectedTrackName: string = '';
+  selectedArtistName: string = '';
+  isModalOpen = false;
 
   constructor(private fetchSpotifyService: FetchSpotifyService, private dialogRef: MatDialog) {}
 
@@ -28,15 +32,21 @@ export class OverviewComponent implements OnInit {
    this.getTopTracks();
    this.getTopArtists()
   }
-
-  isModalOpen = false;
-
-  openModal() {
+  
+  openModal(trackName: string, trackArtists: string, trackUrl: string, trackImg: string) {
+    this.selectedTrackName = trackName;
+    this.selectedTrackImg = trackImg;
+    this.selectedArtistName = trackArtists;
+    this.selectedTrackUrl = trackUrl;
     this.isModalOpen = true;
   }
-
+  
   closeModal() {
     this.isModalOpen = false;
+  }
+  
+  getArtistNames(track: { artists: { name: string }[] }): string {
+    return track.artists?.map(artist => artist.name).join(', ');
   }
   
   private getTopTracks(): void {

@@ -1,0 +1,115 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(2px);
+}
+
+.modal-content {
+    background-color: #090a0c;
+    width: 800px;
+    height: 600px;
+    border-radius: 20px;
+    position: relative;
+    padding: 20px;
+}
+
+.modal-content p {
+    background-color: #090a0c;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.close-button {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.qr-container {
+    position: relative;
+    display: inline-block;
+    background-color: #090a0c;
+}
+
+.modal-content img {
+    height: 200px;
+    width: 200px;
+}
+
+.modal-content .track-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    opacity: 0.35;
+    transform: translate(-10%, -10%);
+    object-fit: cover;
+    border-radius: 15%;
+}
+
+.modal-content .track-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.modal-content .track-artists {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.modal-content .copy-link-text {
+    font-size: 24px;
+}   
+
+.copy-link-container {
+    background-color: #090a0c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copy-link-input {
+    background-color: #090a0c;
+    color: white;
+    font-size: 20px;
+    height: 24px;
+    width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+.copy-link-input:hover {
+    background-color: #eeeeee;
+    color: black;
+    cursor: pointer;
+}
+
+.copy-link-input[readonly] {
+    font-weight: normal;
+    text-align: center;
+}
+
+.copy-link-input.copied {
+    background-color: #ddfbea;
+    color: black;
+}

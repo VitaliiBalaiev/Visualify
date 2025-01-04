@@ -58,15 +58,15 @@ body {
 .runner-up-artists {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center horizontally */
-    gap: 20px; /* Space between items */
+    justify-content: center;
+    gap: 20px;
 }
 
 .runner-up-artist-card {
-    flex: 0 0 calc(50% - 300px); /* Take 50% width minus gap */
-    max-width: calc(50% - 300px); /* Ensure the width doesn't exceed 50% */
-    box-sizing: border-box; /* Include padding and border in width */
-    text-align: center; /* Center-align the text */
+    flex: 0 0 calc(50% - 300px);
+    max-width: calc(50% - 300px);
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .runner-up-artist-card img {
@@ -120,7 +120,7 @@ body {
     font-size: 16px;
 }
 
-.image-button {
+.share-top-track {
     border: none;
     padding: 0;
     cursor: pointer;
@@ -128,13 +128,13 @@ body {
     margin-top: 25px;
 }
 
-.image-button img {
+.share-top-track img {
     width: 51px;
     height: 52px;
     transition: transform 0.3s ease;
 }
 
-.image-button:hover img {
+.share-top-track:hover img {
     opacity: 0.8;
     transform: scale(1.1);
 }
