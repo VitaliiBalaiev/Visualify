@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {FetchSpotifyService} from "../app/services/fetch-spotify.service";
 import {Router} from "@angular/router";
-import {AuthSpotifyService} from "../app/services/auth-spotify.service";
+import {AuthSpotifyService} from "../services/auth-spotify.service";
 
 @Component({
   selector: 'app-home',

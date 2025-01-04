@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {FetchSpotifyService} from '../app/services/fetch-spotify.service';
 import {NgForOf, NgIf} from '@angular/common';
-import {FormatFollowersPipe} from "../app/pipes/format-followers.pipe";
 import {MatDialog} from "@angular/material/dialog";
 import {SharePopupComponent} from "../share-popup/share-popup.component";
+import {FormatFollowersPipe} from "../pipes/format-followers.pipe";
+import {FetchSpotifyService} from "../services/fetch-spotify.service";
 
 @Component({
   selector: 'app-overview',
@@ -54,7 +54,7 @@ export class OverviewComponent implements OnInit {
       next: (response: any) => {
         this.topTracks = response.items;
       },
-      error: (error) => {
+      error: () => {
         console.log('Error fetching top tracks');
       },
     });
@@ -65,7 +65,7 @@ export class OverviewComponent implements OnInit {
       next: (response: any) => {
         this.topArtists = response.items;
       },
-      error: (error) => {
+      error: () => {
         console.log('Error fetching top artists');
       },
     });
