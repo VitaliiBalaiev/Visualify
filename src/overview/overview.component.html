@@ -13,11 +13,11 @@
 <div class="overview">
     <p class="overview-title">Your favorite artist:</p>
     <div class="favorite-artist">
-        <img [src]="topArtists[0].images[0].url" alt="{{ topArtists[0].name }}" width="400" height="400"/>
-        <p class="top-artist-name">{{ topArtists[0].name }}</p>
-        <p class="top-artist-followers">{{ topArtists[0].followers.total | formatFollowers }} followers</p>
+        <img [src]="topArtists[0]?.images[0].url" alt="{{ topArtists[0]?.name }}" width="400" height="400"/>
+        <p class="top-artist-name">{{ topArtists[0]?.name }}</p>
+        <p class="top-artist-followers">{{ topArtists[0]?.followers?.total | formatFollowers }} followers</p>
         <div class="top-artist-genres">
-            <div class="top-artist-genre-card" *ngFor="let genre of topArtists[0].genres">
+            <div class="top-artist-genre-card" *ngFor="let genre of topArtists[0]?.genres">
                 <p>{{ genre }}</p>
             </div>
         </div>
@@ -29,7 +29,7 @@
         <div class="runner-up-artist-card" *ngFor="let artist of topArtists.slice(1); let i = index">
             <img [src]="artist.images[0]?.url" alt="{{ artist.name }}" width="250" height="250">
             <p class="runner-up-artist-name">{{ i + 2 }}. {{ artist.name }}</p>
-            <p class="runner-up-artist-followers">{{ artist.followers.total | formatFollowers }} followers</p>
+            <p class="runner-up-artist-followers">{{ artist.followers.total || 0 | formatFollowers }} followers</p>
             <div class="runner-up-artist-genres">
                 <div class="runner-up-artist-genre-card" *ngFor="let genre of artist.genres.slice(0,4)">
                     <p>{{ genre }}</p>
@@ -39,10 +39,10 @@
     </div>
     
     <p class="overview-title">Your favorite track:</p>
-        <img [src]="topTracks[0].album.images[0].url" alt="{{ topTracks[0].name }}" width="400px" height="400px">
+        <img [src]="topTracks[0]?.album?.images[0].url" alt="{{ topTracks[0]?.name }}" width="400px" height="400px">
     <div class="top-track">
         <div class="top-track-info">
-            <p class="top-track-name">{{ topTracks[0].name }}</p>
+            <p class="top-track-name">{{ topTracks[0]?.name }}</p>
             <p class="top-track-artists">
         <span *ngFor="let artist of topTracks[0]?.artists; let last = last">
             {{ artist.name }}<span *ngIf="!last">, </span>
