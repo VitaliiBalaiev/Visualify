@@ -1,15 +1,3 @@
-<!--<h2>Your Top 5 Artists</h2>-->
-
-<!--<li *ngFor="let artist of topArtists">-->
-<!--  <span>{{ artist.name }}</span>-->
-<!--</li>-->
-
-<!--<h2>Your Top 5 Tracks</h2>-->
-<!--<li *ngFor="let track of topTracks">-->
-<!--  <span>{{ track.name }} by {{ track.artists[0]?.name }}</span>-->
-<!--</li>-->
-
-
 <div class="overview">
     <p class="overview-title">Your favorite artist:</p>
     <div class="favorite-artist">
@@ -44,9 +32,9 @@
         <div class="top-track-info">
             <p class="top-track-name">{{ topTracks[0]?.name }}</p>
             <p class="top-track-artists">
-        <span *ngFor="let artist of topTracks[0]?.artists; let last = last">
-            {{ artist.name }}<span *ngIf="!last">, </span>
-        </span>
+                <span *ngFor="let artist of topTracks[0]?.artists; let last = last">
+                    {{ artist.name }}<span *ngIf="!last">, </span>
+                </span>
             </p>
         </div>
 
@@ -54,7 +42,6 @@
             <img src="/share-icon.png" alt="Share Icon" />
         </button>
         <app-share-popup *ngIf="isModalOpen" [trackName]="selectedTrackName" [trackArtists]="selectedArtistName" [shareLink]="selectedTrackUrl" [trackImg]="selectedTrackImg" (close)="closeModal()"></app-share-popup>
-
     </div>
     
     
