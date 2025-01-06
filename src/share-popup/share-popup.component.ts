@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
-  selector: 'app-share-popup',
+  selector: 'share-popup',
   imports: [],
   templateUrl: './share-popup.component.html',
   standalone: true,
