@@ -1,7 +1,3 @@
-body {
-    
-}
-
 .favorite-artist {
     margin-bottom: 150px;
 }
@@ -107,6 +103,7 @@ body {
 
 .top-track {
     align-items: center;
+    margin-bottom: 150px;
 }
 
 .top-track-name {
@@ -137,4 +134,68 @@ body {
 .share-top-track:hover img {
     opacity: 0.8;
     transform: scale(1.1);
+}
+
+.runner-up-tracks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.runner-up-track-card {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: 40%;
+    margin-bottom: 40px;
+    gap: 25px;
+}
+
+.track-number {
+    font-size: 26px;
+    font-weight: bold;
+    width: 32px;
+    text-align: center;
+    
+}
+
+.runner-up-track-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+
+.runner-up-track-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.runner-up-track-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.runner-up-track-artists {
+    font-size: 20px;
+}
+
+.share-track {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.share-track img {
+    width: 40px;
+    height: 40px;
 }

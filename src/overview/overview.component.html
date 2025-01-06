@@ -44,6 +44,25 @@
         <app-share-popup *ngIf="isModalOpen" [trackName]="selectedTrackName" [trackArtists]="selectedArtistName" [shareLink]="selectedTrackUrl" [trackImg]="selectedTrackImg" (close)="closeModal()"></app-share-popup>
     </div>
     
-    
-    
+    <p class="overview-title">Runner-up tracks:</p>
+    <div class="runner-up-tracks">
+        <div class="runner-up-track-card" *ngFor="let track of topTracks.slice(1); let i = index">
+            <div class="track-number">{{ i + 2 }}.</div>
+            <img [src]="track?.album?.images[0].url" alt="">
+            <div class="runner-up-track-text">
+                <div class="runner-up-track-name">{{ track?.name }}</div>
+                <div class="runner-up-track-artists">
+        <span *ngFor="let artist of track?.artists; let last = last">
+          {{ artist.name }}<span *ngIf="!last">, </span>
+        </span>
+                </div>
+            </div>
+            <button class="share-track" (click)="openModal(track.name, getArtistNames(track), track.external_urls.spotify, track.album.images[0].url)">
+                <img src="/share-icon.png" alt="Share Icon" />
+            </button>
+        </div>
+    </div>
+
+
+
 </div>
